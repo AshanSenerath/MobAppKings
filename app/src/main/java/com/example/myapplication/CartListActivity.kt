@@ -1,4 +1,5 @@
 package com.example.myapplication
+//Interface for cart activities//
 
 import CartDatabaseHelper
 import android.app.Dialog
@@ -27,9 +28,10 @@ class CartListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart_list)
 
+
         dbHelper = CartDatabaseHelper(this)
         cartList = dbHelper.getCartList(intent.getIntExtra("userId", -1)) as MutableList<Cart>
-
+//add deletee
         val cartRecyclerView = findViewById<RecyclerView>(R.id.cartRecyclerView)
         cartAdapter = CartListAdapter(cartList) { cart, action ->
             when (action) {
